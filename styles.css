@@ -1,0 +1,282 @@
+/* Night Mode Colors and Text Styles */
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  margin-top: auto;
+  padding: 10px;
+  text-align: left;
+  color: #ccc;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff;
+  margin: 0;
+  padding: 10px 0;
+  text-align: center;
+}
+
+p {
+  color: #cccccc;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+a {
+  color: #90caf9;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #64b5f6;
+  text-decoration: underline;
+}
+
+button {
+  background-color: #1e88e5;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #1565c0;
+}
+
+#calorie-form, #custom-premade-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
+  margin: 20px auto;
+  width: 80%;
+  padding: 20px;
+  font-size: 16px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#calorie-form label {
+  margin-left: 30px;
+  margin-right: 10px;
+  color: #e0e0e0;
+}
+
+#progress-bars {
+  width: 80%;
+  background-color: #2c2c2c;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 20px auto;
+}
+
+#calorie-progress::-webkit-progress-bar,
+#protein-progress::-webkit-progress-bar {
+  background-color: #333;
+  border-radius: 10px;
+}
+
+#calorie-progress::-webkit-progress-value {
+  background: linear-gradient(to right, #ff4081, #f8bbd0);
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+#protein-progress::-webkit-progress-value {
+  background: linear-gradient(to right, #00e676, #69f0ae);
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+progress {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  height: 20px;
+  border: none;
+}
+
+.meal-card {
+  width: 90%;
+  margin: 10px auto;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #1f1f1f;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  transition: transform 0.2s ease;
+}
+
+.meal-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1);
+}
+
+.meal-info {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #f0f0f0;
+}
+
+.meal-info strong {
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.meal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.meal-actions button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.edit-btn {
+  background-color: #43a047;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #388e3c;
+}
+
+.remove-btn {
+  background-color: #e53935;
+  color: white;
+}
+
+.remove-btn:hover {
+  background-color: #c62828;
+}
+
+.premade-meal-container {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 10px auto 30px auto;
+}
+
+.premade-meal {
+  border: 1px solid #444;
+  padding: 12px;
+  border-radius: 10px;
+  background-color: #2a2a2a;
+  width: 200px;
+  text-align: center;
+  color: #eee;
+}
+
+.add-premade-btn {
+  margin-top: 8px;
+  padding: 6px 12px;
+  background-color: #43a047;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+ 
+.add-premade-btn:hover {
+  background-color: #388e3c;
+}
+
+.remove-premade-btn {
+  margin-top: 8px;
+  padding: 6px 12px;
+  background-color: #ff2a23;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.remove-premade-btn:hover {
+  background-color: #bb0909;
+}
+
+ #custom-premade-form {
+  display: flex;
+  justify-content: space-between; /* space inputs evenly */
+  align-items: center;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
+  margin: 5px auto 20px auto;
+  width: 80%;
+  padding: 20px; 
+  font-size: 16px;
+  font-family: 'Segoe UI', sans-serif;
+  gap: 20px; /* space between inputs and button */
+  box-sizing: border-box;
+}
+
+#custom-premade-form input[type="text"],
+#custom-premade-form input[type="number"] {
+  background-color: #1e1e1e;
+  color: #fff; /* white text */
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 12px 15px;
+  font-size: 18px; /* bigger font */
+  font-family: 'Segoe UI', sans-serif; /* match meal cards */
+  flex-grow: 1; /* inputs expand evenly */
+  box-sizing: border-box;
+  font-style: normal; /* remove italic */
+  width: 0; /* flex-grow will control width */
+}
+
+#custom-premade-form input[type="text"]::placeholder,
+#custom-premade-form input[type="number"]::placeholder {
+  color: #bbb; /* lighter but white-ish */
+  font-style: normal; /* no italic */
+}
+
+#custom-premade-form input[type="text"]:focus,
+#custom-premade-form input[type="number"]:focus {
+  outline: none;
+  border-color: #1e88e5;
+  box-shadow: 0 0 6px #1565c0;
+}
+
+#custom-premade-form button[type="submit"] {
+  background-color: #1e88e5;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0; /* don't shrink */
+  white-space: nowrap;
+}
+
+#custom-premade-form button[type="submit"]:hover {
+  background-color: #1565c0;
+}
