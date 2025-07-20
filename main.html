@@ -1,0 +1,132 @@
+<html>
+<script type="module" src="main.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="flame.png">
+</head>
+
+<body>
+    <header>
+        <h1>Calorie Tracker</h1>
+    </header>
+
+    <main>
+
+        <h2>Track Your Calories</h2>
+        <div id="progress-bars" style="padding: 1em;">
+            <div>
+                <label id="calorie-label" style="font-size: 1.2em;">Calorie Progress: 0/3000</label>
+                <progress id="calorie-progress" value="0" max="3000" style="width: 100%; height: 20px;"></progress>
+            </div>
+            <div>
+                <label id="protein-label" style="font-size: 1.2em;">Protein Progress: 0/175</label>
+                <progress id="protein-progress" value="0" max="175" style="width: 100%; height: 20px;"></progress>
+            </div>
+            <button id="edit-goals-btn" style="font-size: 1.2em; padding: 0.5em; margin-top: 1em;">Edit Goals</button>
+
+            <button id="reset-btn"
+                style="font-size: 1.2em; padding: 0.5em; margin-top: 1em; background-color: gray; color: white;">Reset</button>
+
+            <div id="edit-goals-modal"
+                style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 1em; border: 1px solid #ccc; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
+                <h3>Edit Goals</h3>
+                <form id="edit-goals-form">
+                    <label style="font-size: 1.2em;">Calorie Goal:</label>
+                    <input type="number" id="calorie-goal" name="calorie-goal" required
+                        style="font-size: 1.2em; padding: 0.5em; width: 100%;" step="1" min="0">
+                    <label style="font-size: 1.2em;">Protein Goal:</label>
+                    <input type="number" id="protein-goal" name="protein-goal" required
+                        style="font-size: 1.2em; padding: 0.5em; width: 100%;" step="1" min="0">
+                    <button type="submit" style="font-size: 1.2em; padding: 0.5em; margin-top: 1em;">Save</button>
+                    <button type="button" id="close-modal-btn"
+                        style="font-size: 1.2em; padding: 0.5em; margin-top: 1em;">Cancel</button>
+
+                </form>
+            </div>
+        </div>
+
+        <form id="calorie-form" novalidate>
+            <label style="font-size: 1.2em;">Calories:</label>
+            <input type="number" id="calories" name="calories" required
+                style="font-size: 1.2em; padding: 0.5em; width: 100%;" step="1" min="0">
+            <label style="font-size: 1.2em;"> Protein:</label>
+            <input type="number" id="food-item" name="protein" required
+                style="font-size: 1.2em; padding: 0.5em; width: 100%;" step="1" min="0">
+            <button type="submit" style="font-size: 1.2em; padding: 0.5em;">Add</button>
+        </form>
+
+        <audio id="goalSound" src="./success-fanfare-trumpets-6185.mp3" preload="auto"></audio>
+
+        <div id="premade-meals">
+
+            <h3>Premade Meals</h3>
+            <form id="custom-premade-form">
+                <input type="text" id="custom-name" placeholder="Meal Name" required>
+                <input type="number" id="custom-calories" placeholder="Calories" required>
+                <input type="number" id="custom-protein" placeholder="Protein" required>
+                <button type="submit">Add Custom Meal</button>
+            </form>
+            <div class="premade-meal-container">
+                <div class="premade-meal" data-name="Protein Bar" data-calories="190" data-protein="10">
+                    <strong>Protein Bar</strong><br>
+                    Calories: 190 cal<br>
+                    Protein: 10 g<br>
+                    <button class="add-premade-btn">Add</button>
+                    <button class="remove-premade-btn">Remove</button>
+                </div>
+
+                <div class="premade-meal" data-name="Pizza" data-calories="390" data-protein="16">
+                    <strong>Pizza</strong><br>
+                    Calories: 390 cal<br>
+                    Protein: 16 g<br>
+                    <button class="add-premade-btn">Add</button>
+                    <button class="remove-premade-btn">Remove</button>
+                </div>
+                <div class="premade-meal" data-name="Chicken Pot Pie" data-calories="470" data-protein="12">
+                    <strong>Chicken Pot Pie</strong><br>
+                    Calories: 470 cal<br>
+                    Protein: 12 g<br>
+                    <button class="add-premade-btn">Add</button>
+                    <button class="remove-premade-btn">Remove</button>
+                </div>
+                <div class="premade-meal" data-name="Eggs" data-calories="280" data-protein="24">
+                    <strong>4 Eggs</strong><br>
+                    Calories: 280 cal<br>
+                    Protein: 24 g<br>
+                    <button class="add-premade-btn">Add</button>
+                    <button class="remove-premade-btn">Remove</button>
+                </div>
+                <div class="premade-meal" data-name="ProteinShake" data-calories="180" data-protein="30">
+                    <strong>Protein Shake</strong><br>
+                    Calories: 180 cal<br>
+                    Protein: 30 g<br>
+                    <button class="add-premade-btn">Add</button>
+                    <button class="remove-premade-btn">Remove</button>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <section id="calorie-list">
+            <h3>Calorie Log</h3>
+
+            <ul id="log">
+                <!-- Calorie entries will appear here -->
+                <div id="meal-list">
+
+                </div>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Calorie Tracker</p>
+    </footer>
+</body>
+
+</html>
